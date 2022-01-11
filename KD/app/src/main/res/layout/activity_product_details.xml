@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/product_background"
+                android:backgroundTint="@color/blue">
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
+                    android:background="@drawable/back"
+                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:onClick="call_Product"
+                    android:layout_marginLeft="15dp"/>
+
+                <ImageView
+                    android:id="@+id/product_heading_image"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/sample_phone"/>
+
+                <TextView
+                    android:id="@+id/product_heading_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="110dp"
+                    android:backgroundTint="@color/blue"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:orientation="vertical"
+                android:weightSum="1"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/tableLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardElevation="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/process_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Processor"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/processorIcon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/processorIcon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/processor"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/process_text"
+                                app:layout_constraintTop_toTopOf="@+id/process_text" />
+
+                            <TextView
+                                android:id="@+id/chipset_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Chipset"
+                                app:layout_constraintEnd_toStartOf="@+id/chipset"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/chipset" />
+
+                            <TextView
+                                android:id="@+id/chipset"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintHorizontal_weight="4"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/chipset_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/processorIcon" />
+
+                            <TextView
+                                android:id="@+id/cpu_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="CPU"
+                                app:layout_constraintEnd_toStartOf="@+id/cpu"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/chipset" />
+
+                            <TextView
+                                android:id="@+id/cpu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintHorizontal_weight="4"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/cpu_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/chipset" />
+
+                            <TextView
+                                android:id="@+id/gpu_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="GPU"
+                                app:layout_constraintEnd_toStartOf="@+id/gpu"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cpu" />
+
+                            <TextView
+                                android:id="@+id/gpu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/gpu_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/cpu" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/memory_heading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Memory"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/ram_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/ram_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/ram"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/memory_heading"
+                                app:layout_constraintTop_toTopOf="@+id/memory_heading" />
+
+                            <TextView
+                                android:id="@+id/builtin_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Built-in"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/builtin"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/builtin" />
+
+                            <TextView
+                                android:id="@+id/builtin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintHorizontal_weight="4"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/builtin_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/ram_icon" />
+
+                            <TextView
+                                android:id="@+id/card_support_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Card Support"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/card_support"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/builtin" />
+
+                            <TextView
+                                android:id="@+id/card_support"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/card_support_heading"
+                                app:layout_constraintTop_toTopOf="@+id/card_support_heading" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/battery_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Battery"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/battery_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/battery_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/batterystatus"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/battery_text"
+                                app:layout_constraintTop_toTopOf="@+id/battery_text" />
+
+                            <TextView
+                                android:id="@+id/capacity_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Capacity"
+                                app:layout_constraintEnd_toStartOf="@+id/capacity"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/capacity" />
+
+                            <TextView
+                                android:id="@+id/capacity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintStart_toEndOf="@+id/capacity_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/battery_icon" />
+
+                            <TextView
+                                android:id="@+id/battery_other_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Others"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/battery_other"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/capacity" />
+
+                            <TextView
+                                android:id="@+id/battery_other"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/battery_other_heading"
+                                app:layout_constraintTop_toTopOf="@+id/battery_other_heading" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/camera_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Camera"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/camera_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/camera_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/cameraicon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/camera_text"
+                                app:layout_constraintTop_toTopOf="@+id/camera_text" />
+
+                            <TextView
+                                android:id="@+id/camera_features_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Features"
+                                app:layout_constraintEnd_toStartOf="@+id/camera_features"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/camera_features" />
+
+                            <TextView
+                                android:id="@+id/camera_features"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintStart_toEndOf="@+id/camera_features_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/camera_icon" />
+
+                            <TextView
+                                android:id="@+id/camera_front_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Front"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/camera_front"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/camera_features" />
+
+                            <TextView
+                                android:id="@+id/camera_front"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/camera_front_heading"
+                                app:layout_constraintTop_toTopOf="@+id/camera_front_heading" />
+
+                            <TextView
+                                android:id="@+id/camera_main_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Main"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/camera_main"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/camera_front" />
+
+                            <TextView
+                                android:id="@+id/camera_main"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/camera_main_heading"
+                                app:layout_constraintTop_toTopOf="@+id/camera_main_heading" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/connectivity_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Connectivity"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/connectivity_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/connectivity_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/antenna"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/connectivity_text"
+                                app:layout_constraintTop_toTopOf="@+id/connectivity_text" />
+
+                            <TextView
+                                android:id="@+id/bluetooth_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Bluetooth"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/bluetooth"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/bluetooth" />
+
+                            <TextView
+                                android:id="@+id/bluetooth"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/bluetooth_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/connectivity_icon" />
+
+                            <TextView
+                                android:id="@+id/data_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Data"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/data"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/bluetooth" />
+
+                            <TextView
+                                android:id="@+id/data"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/data_heading"
+                                app:layout_constraintTop_toTopOf="@+id/data_heading" />
+
+                            <TextView
+                                android:id="@+id/gps_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="GPS"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/gps"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/data" />
+
+                            <TextView
+                                android:id="@+id/gps"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/gps_heading"
+                                app:layout_constraintTop_toTopOf="@+id/gps_heading" />
+
+                            <TextView
+                                android:id="@+id/npc_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="NFC"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/nfc"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/gps" />
+
+                            <TextView
+                                android:id="@+id/nfc"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/npc_heading"
+                                app:layout_constraintTop_toTopOf="@+id/npc_heading" />
+
+                            <TextView
+                                android:id="@+id/radio_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Radio"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/radio"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/nfc" />
+
+                            <TextView
+                                android:id="@+id/radio"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/radio_heading"
+                                app:layout_constraintTop_toTopOf="@+id/radio_heading" />
+
+                            <TextView
+                                android:id="@+id/usb_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="USB"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/usb"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/radio" />
+
+                            <TextView
+                                android:id="@+id/usb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/usb_heading"
+                                app:layout_constraintTop_toTopOf="@+id/usb_heading" />
+
+                            <TextView
+                                android:id="@+id/wlan_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="WLAN"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/wlan"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/usb" />
+
+                            <TextView
+                                android:id="@+id/wlan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/wlan_heading"
+                                app:layout_constraintTop_toTopOf="@+id/wlan_heading" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/size_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Build"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/size_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/size_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/size"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/size_text"
+                                app:layout_constraintTop_toTopOf="@+id/size_text" />
+
+                            <TextView
+                                android:id="@+id/colors_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Colors"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/colors"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/colors" />
+
+                            <TextView
+                                android:id="@+id/colors"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/colors_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/size_icon" />
+
+                            <TextView
+                                android:id="@+id/dimensions_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Dimensions"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/dimensions"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/colors" />
+
+                            <TextView
+                                android:id="@+id/dimensions"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/dimensions_heading"
+                                app:layout_constraintTop_toTopOf="@+id/dimensions_heading" />
+
+                            <TextView
+                                android:id="@+id/os_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="OS"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/os_text"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/dimensions" />
+
+                            <TextView
+                                android:id="@+id/os_text"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/os_heading"
+                                app:layout_constraintTop_toTopOf="@+id/os_heading" />
+
+                            <TextView
+                                android:id="@+id/sim_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="SIM"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/sim"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/os_text" />
+
+                            <TextView
+                                android:id="@+id/sim"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/sim_heading"
+                                app:layout_constraintTop_toTopOf="@+id/sim_heading" />
+
+                            <TextView
+                                android:id="@+id/weight_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Weight"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/weight_text"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/sim" />
+
+                            <TextView
+                                android:id="@+id/weight_text"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/weight_heading"
+                                app:layout_constraintTop_toTopOf="@+id/weight_heading" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/features_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Features"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/features_icon"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/features_icon"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/mobileicon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/features_text"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/audio_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Audio"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/audio"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/audio" />
+
+                            <TextView
+                                android:id="@+id/audio"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/audio_heading"
+                                app:layout_constraintTop_toBottomOf="@+id/features_icon" />
+
+                            <TextView
+                                android:id="@+id/browser_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Browser"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/browser"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/audio" />
+
+                            <TextView
+                                android:id="@+id/browser"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/browser_heading"
+                                app:layout_constraintTop_toTopOf="@+id/browser_heading" />
+
+                            <TextView
+                                android:id="@+id/extras_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Extra"
+                                app:layout_constraintEnd_toStartOf="@+id/extra"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/browser" />
+
+                            <TextView
+                                android:id="@+id/extra"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_weight="4"
+
+                                app:layout_constraintStart_toEndOf="@+id/extras_heading"
+                                app:layout_constraintTop_toTopOf="@+id/extras_heading" />
+
+                            <TextView
+                                android:id="@+id/games_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Games"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/games"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/extra" />
+
+                            <TextView
+                                android:id="@+id/games"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/games_heading"
+                                app:layout_constraintTop_toTopOf="@+id/games_heading" />
+
+                            <TextView
+                                android:id="@+id/messaging_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Messaging"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/messaging"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/games" />
+
+                            <TextView
+                                android:id="@+id/messaging"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/messaging_heading"
+                                app:layout_constraintTop_toTopOf="@+id/messaging_heading" />
+
+                            <TextView
+                                android:id="@+id/sensors_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Sensors"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/sensors"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/messaging" />
+
+                            <TextView
+                                android:id="@+id/sensors"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/sensors_heading"
+                                app:layout_constraintTop_toTopOf="@+id/sensors_heading" />
+
+                            <TextView
+                                android:id="@+id/torch_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Torch"
+                                app:layout_constraintHorizontal_weight="2"
+                                app:layout_constraintEnd_toStartOf="@+id/torch"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/sensors" />
+
+                            <TextView
+                                android:id="@+id/torch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                app:layout_constraintHorizontal_weight="4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/torch_heading"
+                                app:layout_constraintTop_toTopOf="@+id/torch_heading" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

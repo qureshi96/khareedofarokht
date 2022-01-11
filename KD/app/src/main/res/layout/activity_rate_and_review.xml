@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".RateAndReview">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/product_background"
+            android:backgroundTint="@color/blue">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:clickable="true"
+                android:onClick="call_product_activity"
+                android:background="@drawable/back"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"/>
+
+            <ImageView
+                android:id="@+id/phoneimage"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/sample_phone"/>
+
+            <TextView
+                android:id="@+id/phonename"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="110dp"
+                android:backgroundTint="@color/blue"
+                android:text="Vivo 370"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ratings and Reviews"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/round_corners_outline">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ratings_and_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:padding="10dp"/>
+
+        </ScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate and Review the Product"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold" />
+        <RatingBar
+            android:id="@+id/user_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/pink"
+            android:rating="0"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:layout_gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name"
+            android:ems="10"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:orientation="horizontal"
+            android:layout_gravity="top"
+            android:weightSum="6">
+
+            <EditText
+                android:id="@+id/user_review"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="5"
+                android:background="@drawable/round_corners_outline"
+                android:elevation="6dp"
+                android:hint="Please add your review..."
+                android:padding="15dp"
+                app:itemRippleColor="@color/black" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/pink"
+                android:id="@+id/submit_review"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/move_right"
+                android:textAllCaps="false"
+                android:background="@drawable/round_corners_outline"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
